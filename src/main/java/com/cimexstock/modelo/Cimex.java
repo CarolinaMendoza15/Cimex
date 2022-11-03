@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.cimexstock.modelo;
 
 import java.util.List;
@@ -5,4 +6,10 @@ import java.util.List;
 public class Cimex {
     private List<Usuario> usuarios;
     private List<Sucursal> Sucursales;
+=======
+package com.cimex.data;
+
+public class Cimex {
+
+>>>>>>> origin/main
 }
