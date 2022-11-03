@@ -10,14 +10,18 @@ public class ConectDb {
         private Connection c = null; // Objeto de tipo coneccion donde se guardaran los datos de coneccion
         private Statement stmt = null; // Objeto de tipo sentencia SQL
         private ResultSet rs = null; // Objeto de tipo resultado Query SQL
-
+        private String url="jdbc:postgresql://localhost:5432/postgresql";
+        private String usuario="natalia";
+        private String passware="natalia";
         // CONSTRUCTOR
         public ConectDb() throws SQLException {
             try {
                 Class.forName("org.postgresql.Driver");
-                c = DriverManager.getConnection("postgres://qjuftihi:MeZRS6tOIkQoqVAumMV8k7VMmGYyNYCm@peanut.db.elephantsql.com/qjuftihi", "qjuftihi", "MeZRS6tOIkQoqVAumMV8k7VMmGYyNYCm");
+                c = DriverManager.getConnection(url, usuario, passware);
                 c.setAutoCommit(true);
+                System.out.println("Conectada!!");
             } catch (Exception e) {
+                System.out.println("NOOOOOOOOOOOOOOOOOO!!");
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 c.close();
             }
@@ -34,4 +38,11 @@ public class ConectDb {
             c.close();
         }
 
+    public Connection getC() {
+        return c;
+    }
+
+    public void setC(Connection c) {
+        this.c = c;
+    }
 }
