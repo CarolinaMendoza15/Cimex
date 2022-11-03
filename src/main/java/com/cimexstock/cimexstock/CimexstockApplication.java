@@ -1,6 +1,6 @@
 package com.cimexstock.cimexstock;
 
-<<<<<<< HEAD
+
 import com.cimexstock.controller.UsuarioServlet;
 import com.cimexstock.db.ConectDb;
 import com.cimexstock.modelo.Producto;
@@ -23,17 +23,6 @@ CimexstockApplication {
 		Producto producto= new Producto(2,"leche",130.00,10,30,50,prov1);
 		System.out.println(producto);
 
-=======
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
-public class CimexstockApplication {
-
-	public static void main(String[] args) {
-
-		SpringApplication.run(CimexstockApplication.class, args);
->>>>>>> origin/main
 	}
-
 }

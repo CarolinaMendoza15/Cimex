@@ -12,7 +12,7 @@ import java.util.List;
 public class UsuarioDb {
 
     public List<Usuario> consultarUsuarios() throws SQLException {
-        List<Usuario> usuarios =new ArrayList<>();
+        List<Usuario> usuarios =new ArrayList<Usuario>();
         ConectDb c = new ConectDb();
           Statement stmt = c.getC().createStatement();
             ResultSet rs = stmt.executeQuery( "SELECT * FROM USUARIO;" );
