@@ -8,15 +8,15 @@ public class Usuario implements Serializable {
     private String direccion;
     private Integer telefono;
     private String usser;
-    private String passware;
+    private String contrasenia;
 
-    public Usuario(int id, String nombre, String direccion, String usser, Integer telefono) {
+    public Usuario(int id, String nombre,String usser,String contrasenia,String direccion, Integer telefono) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
         this.usser = usser;
-        this.passware = passware;
+        this.contrasenia = contrasenia;
     }
 
 
@@ -60,12 +60,12 @@ public class Usuario implements Serializable {
         this.usser = usser;
     }
 
-    public String getPassware() {
-        return passware;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setPassware(String passware) {
-        this.passware = passware;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
     @Override
@@ -76,7 +76,7 @@ public class Usuario implements Serializable {
                 ", direccion='" + direccion + '\'' +
                 ", telefono=" + telefono +
                 ", usser='" + usser + '\'' +
-                ", passware='" + passware + '\'' +
+                ", passware='" + contrasenia + '\'' +
                 '}';
     }
 }
