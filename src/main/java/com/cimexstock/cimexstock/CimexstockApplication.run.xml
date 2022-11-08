@@ -1,7 +1,8 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="CimexstockApplication" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="ALTERNATIVE_JRE_PATH" value="/usr/lib/jvm/java-1.11.0-openjdk-amd64" />
     <option name="MAIN_CLASS_NAME" value="com.cimexstock.cimexstock.CimexstockApplication" />
-    <module name="CIMEX" />
+    <module name="cimexstock" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="com.cimexstock.cimexstock.*" />

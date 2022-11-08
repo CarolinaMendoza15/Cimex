@@ -2,17 +2,16 @@ package com.cimexstock.controller;
 
 import com.cimexstock.db.UsuarioDb;
 import com.cimexstock.modelo.Usuario;
-import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsuarioServlet  {
-    public UsuarioServlet() {
+public class UsuarioController {
+    public UsuarioController() {
     }
 
     public Usuario consultarUsuario(Integer id) throws SQLException {
-        return UsuarioDb.getUsuario(id);
+       return UsuarioDb.getUsuario(id);
     }
     public List<Usuario> listartarUsuario() throws SQLException {
         List<Usuario> usuarios = new ArrayList<Usuario>();
@@ -25,8 +24,10 @@ public class UsuarioServlet  {
     public boolean modificarUsuario(Usuario usuario) throws SQLException {
         return UsuarioDb.modificarUsuario(usuario);
     }
-    public boolean eliminarUsuario(Usuario usuario) throws SQLException {
-        return UsuarioDb.eliminarUsuario(usuario);
+    public boolean eliminarUsuario(Integer id) throws SQLException {
+        return UsuarioDb.eliminarUsuario(id);
+    }
+    public boolean existeUsuario(String usser,String contrasenia) throws SQLException {
+        return UsuarioDb.existeUsuario(usser,contrasenia);
     }
 }
-

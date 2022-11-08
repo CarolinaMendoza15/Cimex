@@ -18,11 +18,11 @@ public class Sucursal {
     public String toString() {
         return "Sucursal{" +
                 "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", telefono=" + telefono +
-                ", usuarios=" + usuarios +
-                ", productos=" + productos +
+                ", \nnombre='" + nombre + '\'' +
+                ", \ndireccion='" + direccion + '\'' +
+                ",\n telefono=" + telefono +
+                ",\n usuarios=" + usuarios +
+                ",\n productos=" + productos +
                 '}';
     }
 

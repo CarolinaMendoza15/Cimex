@@ -18,9 +18,9 @@ public class Proveedor {
     public String toString() {
         return "Proveedor{" +
                 "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", telefono=" + telefono +
+                ", \nnombre='" + nombre + '\'' +
+                ", \ndireccion='" + direccion + '\'' +
+                ", \ntelefono=" + telefono +
                 '}';
     }
 
