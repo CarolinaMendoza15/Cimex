@@ -10,7 +10,7 @@ public class Usuario implements Serializable {
     private String usser;
     private String passware;
 
-    public Usuario(int id, String nombre, String direccion, String usser, Integer telefono) {
+    public Usuario(int id, String nombre, String direccion, Integer telefono, String usser, String passware) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
@@ -19,6 +19,8 @@ public class Usuario implements Serializable {
         this.passware = passware;
     }
 
+    public Usuario() {
+    }
 
     public int getId() {
         return id;
@@ -70,13 +72,11 @@ public class Usuario implements Serializable {
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", telefono=" + telefono +
-                ", usser='" + usser + '\'' +
-                ", passware='" + passware + '\'' +
-                '}';
+        return "\nUsuario id=" + id +
+                ",\nnombre= " + nombre +
+                ",\ndireccion= " + direccion +
+                ",\ntelefono= " + telefono +
+                ",\nusser= " + usser +
+                ",\npassware= " + passware + '\n' ;
     }
 }

@@ -31,22 +31,23 @@ public class CimexController {
     }
     public  void  printItem4() throws SQLException {
         UsuarioController userController= new UsuarioController();
-
         Scanner scan = new Scanner(System.in);
         Usuario usuario= new Usuario();
         System.out.println("4_Nuevo Usuario");
         System.out.println("Nimero Identificador");
         usuario.setId(scan.nextInt());
+        scan.nextLine();
         System.out.println("Nombre");
         usuario.setNombre(scan.nextLine());
         System.out.println("Direccion");
         usuario.setDireccion(scan.nextLine());
         System.out.println("telefono");
         usuario.setTelefono(scan.nextInt());
+        scan.nextLine();
         System.out.println("Usuario");
         usuario.setUsser(scan.nextLine());
         System.out.println("Contracenia");
-        usuario.setContrasenia(scan.nextLine());
+        usuario.setPassware(scan.nextLine());
 
         userController.addUsuario(usuario);
 
@@ -63,8 +64,6 @@ public class CimexController {
     public  void  printItem6() throws SQLException {
         UsuarioController usuarioController= new UsuarioController();
         System.out.println(usuarioController.listartarUsuario());
-
-
     }
 
     public void Menu() throws SQLException {
@@ -80,7 +79,6 @@ public class CimexController {
             System.out.println("ITEM = ");
             numero = scan.next();
             switch(numero){
-                //Case statements
                 case "1": printItem1();
                     break;
                 case "2": printItem2();
@@ -96,8 +94,6 @@ public class CimexController {
                 case "7": System.out.println("Exit");
                     seguir=false;
                     break;
-
-                //Default case statement
                 default:System.out.println("ERROR!");
             }
         } while (seguir);

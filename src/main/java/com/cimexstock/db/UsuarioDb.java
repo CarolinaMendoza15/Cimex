@@ -24,7 +24,7 @@ public class UsuarioDb {
            String  contrasenia = rs.getString("contrasenia");
            String  direccion = rs.getString("direccion");
            Integer  telefono = rs.getInt("telefono");
-           Usuario us =new Usuario(id,nombre,direccion,usser,telefono,contrasenia);
+           Usuario us =new Usuario(id,nombre,direccion,telefono,usser,contrasenia);
            usuarios.add(us);
         }
         rs.close();
@@ -49,7 +49,7 @@ public class UsuarioDb {
                 String  direccion = rs.getString("direccion");
                 Integer  telefono = rs.getInt("telefono");
 
-                return(new Usuario(identitif,nombre,direccion,usser,telefono,contracenia));
+                return(new Usuario(identitif,nombre,direccion,telefono,usser,contracenia));
 
             }
         }
@@ -66,7 +66,7 @@ public class UsuarioDb {
             PreparedStatement pstmt = c.getC().prepareStatement("INSERT INTO usuario VALUES (?,?,?,?,?,?)");
             pstmt.setInt(1, usuario.getId());
             pstmt.setString(2, usuario.getUsser());
-            pstmt.setString(3, usuario.getContrasenia());
+            pstmt.setString(3, usuario.getPassware());
             pstmt.setString(4, usuario.getNombre());
             pstmt.setString(5, usuario.getDireccion());
             pstmt.setInt(6, usuario.getTelefono());
@@ -88,7 +88,7 @@ public class UsuarioDb {
                                                                 "SET usser = ?, contrasenia=?,nombre=?,direccion=?,telefono=?" +
                                                                 "WHERE id= ?;");
             pstmt.setString(1, usuario.getUsser());
-            pstmt.setString(2, usuario.getContrasenia());
+            pstmt.setString(2, usuario.getPassware());
             pstmt.setString(3, usuario.getNombre());
             pstmt.setString(4, usuario.getDireccion());
             pstmt.setInt(5, usuario.getTelefono());
@@ -107,7 +107,7 @@ public class UsuarioDb {
         Statement stmt = c.getC().createStatement();
 
         try{
-            PreparedStatement pstmt = c.getC().prepareStatement("DELETE FROM   usuario  WHERE id= ?;");
+            PreparedStatement pstmt = c.getC().prepareStatement("DELETE FROM usuario  WHERE id= ?;");
              pstmt.setInt(1, id);
             //los parametros tienen un index 1 id porque es el primero y lleva ?para identifivcar que es un parametro que espera valor
             int rs = pstmt.executeUpdate();

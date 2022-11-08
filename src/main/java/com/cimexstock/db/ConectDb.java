@@ -10,7 +10,7 @@ public class ConectDb {
         private Connection c = null; // Objeto de tipo coneccion donde se guardaran los datos de coneccion
         private Statement stmt = null; // Objeto de tipo sentencia SQL
         private ResultSet rs = null; // Objeto de tipo resultado Query SQL
-        private String url="jdbc:postgresql://localhost:5432/postgresql";
+        private String url="jdbc:postgresql://localhost:5432/natalia";
         private String usuario="natalia";
         private String passware="natalia";
         // CONSTRUCTOR
@@ -19,9 +19,7 @@ public class ConectDb {
                 Class.forName("org.postgresql.Driver");
                 c = DriverManager.getConnection(url, usuario, passware);
                 c.setAutoCommit(true);
-                System.out.println("Conectada!!");
-            } catch (Exception e) {
-                System.out.println("NOOOOOOOOOOOOOOOOOO!!");
+               } catch (Exception e) {
                 System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 c.close();
             }
