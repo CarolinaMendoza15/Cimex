@@ -1,6 +1,5 @@
 package com.cimexstock.modelo;
 
-import com.cimexstock.modelo.Producto;
 import com.cimexstock.modelo.Usuario;
 import java.util.ArrayList;
 import java.util.List;

@@ -20,7 +20,7 @@ public class UsuarioDb {
         while ( rs.next() ) {
            int id = rs.getInt("id");
            String  nombre = rs.getString("nombre");
-           String  usser = rs.getString("usser");
+           String  usser = rs.getString("usuario");
            String  contrasenia = rs.getString("contrasenia");
            String  direccion = rs.getString("direccion");
            Integer  telefono = rs.getInt("telefono");
@@ -44,7 +44,7 @@ public class UsuarioDb {
             while (rs.next()) {
                 Integer  identitif = rs.getInt("id");
                 String nombre = rs.getString("nombre");
-                String  usser = rs.getString("usser");
+                String  usser = rs.getString("usuario");
                 String  contracenia = rs.getString("contrasenia");
                 String  direccion = rs.getString("direccion");
                 Integer  telefono = rs.getInt("telefono");
@@ -85,7 +85,7 @@ public class UsuarioDb {
 
         try{
             PreparedStatement pstmt = c.getC().prepareStatement("UPDATE  usuario " +
-                                                                "SET usser = ?, contrasenia=?,nombre=?,direccion=?,telefono=?" +
+                                                                "SET usuario = ?, contrasenia=?,nombre=?,direccion=?,telefono=?" +
                                                                 "WHERE id= ?;");
             pstmt.setString(1, usuario.getUsser());
             pstmt.setString(2, usuario.getPassware());
@@ -124,7 +124,7 @@ public class UsuarioDb {
         Statement stmt = c.getC().createStatement();
         Usuario usuario;
         try{
-            PreparedStatement pstmt = c.getC().prepareStatement("SELECT * FROM usuario WHERE usser=? and contrasenia=?;");
+            PreparedStatement pstmt = c.getC().prepareStatement("SELECT * FROM usuario WHERE usuario=? and contrasenia=?;");
             pstmt.setString(1, uss);
             pstmt.setString(2, contrasenia);
             //los parametros tienen un index 1 id porque es el primero y lleva ?para identifivcar que es un parametro que espera valor

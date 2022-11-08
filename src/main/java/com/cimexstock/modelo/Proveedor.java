@@ -14,6 +14,9 @@ public class Proveedor {
         this.telefono = telefono;
     }
 
+    public Proveedor() {
+    }
+
     @Override
     public String toString() {
         return "Proveedor{" +
