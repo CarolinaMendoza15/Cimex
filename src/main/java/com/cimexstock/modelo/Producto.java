@@ -23,12 +23,12 @@ public class Producto {
     public String toString() {
         return "Producto{" +
                 "id=" + id +
-                ", \nnombre='" + nombre + '\'' +
-                ", \nvalorUnitario=" + valorUnitario +
-                ", \nStock=" + Stock +
-                ", \nStockMinimo=" + StockMinimo +
-                ", \nStockRecomendado=" + StockRecomendado +
-                ", \nproveedor=" + proveedor +
+                ", nombre='" + nombre + '\'' +
+                ", valorUnitario=" + valorUnitario +
+                ", Stock=" + Stock +
+                ", StockMinimo=" + StockMinimo +
+                ", StockRecomendado=" + StockRecomendado +
+                ", proveedor=" + proveedor +
                 '}';
     }
 
