@@ -10,9 +10,9 @@ public class ConectDb {
         private Connection c = null; // Objeto de tipo coneccion donde se guardaran los datos de coneccion
         private Statement stmt = null; // Objeto de tipo sentencia SQL
         private ResultSet rs = null; // Objeto de tipo resultado Query SQL
-        private String url="jdbc:postgresql://localhost:5432/postgresql";
-        private String usuario="natalia";
-        private String passware="natalia";
+        private String url="jdbc:postgresql://localhost:5433/postgres";
+        private String usuario="postgres";
+        private String passware="caro15";
         // CONSTRUCTOR
         public ConectDb() throws SQLException {
             try {
