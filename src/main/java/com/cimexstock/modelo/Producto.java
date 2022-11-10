@@ -3,6 +3,7 @@ package com.cimexstock.modelo;
 public class Producto {
     private int id;
     private String nombre;
+    private String codigo;
     private double valorUnitario;
     private int Stock;
     private  int StockMinimo;
@@ -19,17 +20,26 @@ public class Producto {
         this.proveedor = proveedor;
     }
 
+    public Producto() {
+    }
+
     @Override
     public String toString() {
-        return "Producto{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", valorUnitario=" + valorUnitario +
-                ", Stock=" + Stock +
-                ", StockMinimo=" + StockMinimo +
-                ", StockRecomendado=" + StockRecomendado +
-                ", proveedor=" + proveedor +
-                '}';
+        return "\nProducto id=" + id +
+                ", \nnombre='" + nombre + '\'' +
+                ",\n valorUnitario=" + valorUnitario +
+                ",\n Stock=" + Stock +
+                ",\n StockMinimo=" + StockMinimo +
+                ",\n StockRecomendado=" + StockRecomendado +
+                ",\n proveedor=" + proveedor ;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public int getId() {

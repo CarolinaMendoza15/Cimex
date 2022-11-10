@@ -1,5 +1,8 @@
 package com.cimexstock.controller;
 
+import com.cimexstock.db.ProveedorDb;
+import com.cimexstock.modelo.Producto;
+import com.cimexstock.modelo.Proveedor;
 import com.cimexstock.modelo.Usuario;
 
 import java.sql.SQLException;
@@ -17,16 +20,48 @@ public class CimexController {
         System.out.println("6_Listar Usuario");
         System.out.println("7_SALIR");
     }
-    public  void  printItem1(){
-        System.out.println("1_Consultar Productos Stock ");
+    public  void  printItem1() throws SQLException {
+        ProductoController controller= new ProductoController();
+        System.out.println(controller.listartarProducto());
 
     }
-    public  void  printItem2(){
-        System.out.println("2_Agregar Producto");
+    public  void  printItem2() throws SQLException {
+        ProductoController controller= new ProductoController();
+        Scanner scan = new Scanner(System.in);
+        Producto producto= new Producto();
+        System.out.println("Nuevo Producto");
+        System.out.println("Numero Identificador");
+        producto.setId(scan.nextInt());
+        scan.nextLine();
+        System.out.println("Nombre");
+        producto.setNombre(scan.nextLine());
+        System.out.println("Codigo");
+        producto.setCodigo(scan.nextLine());
+        System.out.println("Stock");
+        producto.setStock(scan.nextInt());
+        scan.nextLine();
+        System.out.println("Stock Minimo ");
+        producto.setStockMinimo(scan.nextInt());
+        scan.nextLine();
+        System.out.println("Stock Recomendado");
+        producto.setStockRecomendado(scan.nextInt());
+        scan.nextLine();
+        System.out.println("$ Precio");
+        producto.setValorUnitario(scan.nextDouble());
+        scan.nextLine();
+        //pendiente agregar Proveedor controller
+        producto.setProveedor(ProveedorDb.getProveedor(1));
+        controller.addProducto(producto);
 
     }
-    public  void  printItem3(){
-        System.out.println("3_Borrar Producto");
+    public  void  printItem3() throws SQLException {
+        ProductoController controller= new ProductoController();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Seleccione Producto a eliminar:");
+        System.out.println(controller.listartarProducto());
+        System.out.println("ID= ");
+        Integer numero = scan.nextInt();
+        controller.eliminarProducto(numero);
 
     }
     public  void  printItem4() throws SQLException {
@@ -65,7 +100,10 @@ public class CimexController {
         UsuarioController usuarioController= new UsuarioController();
         System.out.println(usuarioController.listartarUsuario());
     }
-
+    public  void exit() throws SQLException {
+        LoguinController servlet = new LoguinController();
+        servlet.Loguin();
+    }
     public void Menu() throws SQLException {
         UsuarioController usuarioServlet=new UsuarioController();
         LoguinController loguinController=new LoguinController();
@@ -91,11 +129,12 @@ public class CimexController {
                     break;
                 case "6": printItem6();
                     break;
-                case "7": System.out.println("Exit");
+                case "7":
                     seguir=false;
                     break;
-                default:System.out.println("ERROR!");
+                default:System.out.println("ERROR! Seleccione un item");
             }
         } while (seguir);
+        exit();
     }
 }

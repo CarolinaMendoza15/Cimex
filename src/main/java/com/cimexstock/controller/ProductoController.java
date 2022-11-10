@@ -25,7 +25,7 @@ public class ProductoController {
     public boolean modificarProducto(Producto producto) throws SQLException {
         return ProductoDb.modificarProducto(producto);
     }
-    public boolean eliminarProducto(Producto producto) throws SQLException {
-        return ProductoDb.eliminarProducto(producto);
+    public boolean eliminarProducto(Integer id) throws SQLException {
+        return ProductoDb.eliminarProducto(id);
     }
 }
