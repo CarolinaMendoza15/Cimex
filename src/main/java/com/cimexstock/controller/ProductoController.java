@@ -19,6 +19,11 @@ public class ProductoController {
         productos=ProductoDb.consultarproductos();
         return productos;
     }
+    public List<Producto> listartarProductoAlertaStock() throws SQLException {
+        List<Producto> productos = new ArrayList<Producto>();
+        productos=ProductoDb.consultarproductosBajoStock();
+        return productos;
+    }
     public boolean addProducto(Producto producto) throws SQLException {
         return ProductoDb.addProducto(producto);
     }

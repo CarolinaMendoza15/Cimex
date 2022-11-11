@@ -26,12 +26,13 @@ public class Producto {
     @Override
     public String toString() {
         return "\nProducto id=" + id +
-                ", \nnombre='" + nombre + '\'' +
-                ",\n valorUnitario=" + valorUnitario +
-                ",\n Stock=" + Stock +
-                ",\n StockMinimo=" + StockMinimo +
-                ",\n StockRecomendado=" + StockRecomendado +
-                ",\n proveedor=" + proveedor ;
+                ",\nnombre='" + nombre + '\'' +
+                ",\nvalorUnitario=" + valorUnitario +
+                ",\nStock=" + Stock +
+                ",\nStockMinimo=" + StockMinimo +
+                ",\nStockRecomendado=" + StockRecomendado +
+                ",\nproveedor=" + proveedor +"," +
+                " \n" + proveedor + " \n " ;
     }
 
     public String getCodigo() {

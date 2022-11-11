@@ -19,12 +19,11 @@ public class Proveedor {
 
     @Override
     public String toString() {
-        return "Proveedor{" +
-                "id=" + id +
+        return "Proveedor id=" + id +
                 ", \nnombre='" + nombre + '\'' +
                 ", \ndireccion='" + direccion + '\'' +
                 ", \ntelefono=" + telefono +
-                '}';
+                " \n ";
     }
 
     public int getId() {

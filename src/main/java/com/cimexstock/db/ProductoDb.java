@@ -27,9 +27,8 @@ public class ProductoDb {
             Integer stockMinimo = rs.getInt("stock_minimo");
             Integer  stockrecomendado = rs.getInt("stock_recomendado");
             String codigo = rs.getString("codigo");
-            Integer proveedor = rs.getInt("proveedor_id");
-           // Proveedor proveedor1=  db traer proveedor por id
-            Proveedor proveedor1=new Proveedor();
+            Integer proveedor_id = rs.getInt("proveedor_id");
+            Proveedor proveedor1= ProveedorDb.getProveedor(proveedor_id);
             Producto us =new Producto(id,nombre,valorunitario,stock,stockMinimo,stockrecomendado,proveedor1);
             productos.add(us);
         }
