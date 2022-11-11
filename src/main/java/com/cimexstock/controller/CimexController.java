@@ -2,7 +2,6 @@ package com.cimexstock.controller;
 
 import com.cimexstock.db.ProveedorDb;
 import com.cimexstock.modelo.Producto;
-import com.cimexstock.modelo.Proveedor;
 import com.cimexstock.modelo.Usuario;
 
 import java.sql.SQLException;
@@ -16,11 +15,12 @@ public class CimexController {
         System.out.println("2_Agregar Producto");
         System.out.println("3_Borrar Producto");
         System.out.println("4_Agregar Usuario");
-        System.out.println("5_Borrar Usuario");
-        System.out.println("6_Listar Usuario");
-        System.out.println("7_Consultar Productos con Alerta de Stock ");
-        System.out.println("8_Listar Proveedor");
-        System.out.println("9_SALIR");
+        System.out.println("5_Editar Usuario");
+        System.out.println("6_Borrar Usuario");
+        System.out.println("7_Listar Usuario");
+        System.out.println("8_Consultar Productos con Alerta de Stock ");
+        System.out.println("9_Listar Proveedor");
+        System.out.println("10_SALIR");
     }
     public  void  printItem1() throws SQLException {
         ProductoController controller= new ProductoController();
@@ -90,16 +90,54 @@ public class CimexController {
         userController.addUsuario(usuario);
 
     }
-    public  void  printItem5() throws SQLException {
+    public  void  printItem5(Usuario usuario) throws SQLException {
+        UsuarioController userController= new UsuarioController();
+        String str;
+        Integer varint=null;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Editar Usuario");
+        System.out.println("Nombre "+ usuario.getNombre() );
+        str=scan.nextLine();
+        if (str != "" )
+            usuario.setNombre(str);
+        System.out.println("Direccion " + usuario.getDireccion());
+        str=scan.nextLine();
+        if (str != "")
+            usuario.setDireccion(str);
+        System.out.println("telefono "+ usuario.getTelefono());
+        varint=scan.nextInt();
+        if (varint != null)
+            usuario.setTelefono(varint);
+        scan.nextLine();
+        System.out.println("Usuario " + usuario.getUsser());
+        str=scan.nextLine();
+        if (str != "")
+            usuario.setUsser(str);
+        System.out.println("Contracenia " + usuario.getPassware());
+        str=scan.nextLine();
+        if (str != "")
+            usuario.setPassware(str);
+        userController.modificarUsuario(usuario);
+
+    }
+    public  void  printItem5(boolean editar) throws SQLException {
         UsuarioController usuarioController= new UsuarioController();
         Scanner scan = new Scanner(System.in);
-        System.out.println("Seleccione usuario a eliminar:");
+        System.out.println("Seleccione usuario :");
         System.out.println(usuarioController.listartarUsuario());
         System.out.println("ID= ");
-        Integer numero = scan.nextInt();
-        usuarioController.eliminarUsuario(numero);
+        if (editar){
+            Integer numero = scan.nextInt();
+            Usuario usu = usuarioController.consultarUsuario(numero);
+            printItem5(usu);
+        }else{
+            Integer numero = scan.nextInt();
+            usuarioController.eliminarUsuario(numero);
+        }
+
+
     }
-    public  void  printItem6() throws SQLException {
+    public  void printItem7() throws SQLException {
         UsuarioController usuarioController= new UsuarioController();
         System.out.println(usuarioController.listartarUsuario());
     }
@@ -133,15 +171,17 @@ public class CimexController {
                     break;
                 case "4":printItem4();
                     break;
-                case "5": printItem5();
+                case "5":printItem5(true);
                     break;
-                case "6": printItem6();
+                case "6": printItem5(false);
                     break;
                 case "7": printItem7();
                     break;
                 case "8": printItem8();
                     break;
-                case "9":
+                case "9": printItem9();
+                    break;
+                case "10":
                     seguir=false;
                     break;
                 default:System.out.println("ERROR! Seleccione un item");
@@ -150,13 +190,13 @@ public class CimexController {
         exit();
     }
 
-    private void printItem7() throws SQLException {
+    private void printItem8() throws SQLException {
         ProductoController controller= new ProductoController();
         System.out.println("ID | NOMBRE | CODIGO| PRECIO | STOCK | STOCK MINIMO | STOC RECOMENDADO |PROVEEDOR ");
         System.out.println(controller.listartarProductoAlertaStock());
     }
 
-    private void printItem8() throws SQLException {
+    private void printItem9() throws SQLException {
         ProveedorController controller= new ProveedorController();
         System.out.println(controller.listartarProveedor());
     }

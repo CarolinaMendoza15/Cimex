@@ -37,7 +37,7 @@ public class UsuarioDb {
         Usuario usuario;
         try{
             PreparedStatement pstmt = c.getC().prepareStatement("SELECT * FROM usuario WHERE id=?;");
-            pstmt.setInt(1, 0);
+            pstmt.setInt(1, id);
             //los parametros tienen un index 1 id porque es el primero y lleva ?para identifivcar que es un parametro que espera valor
             ResultSet rs = pstmt.executeQuery();
 
