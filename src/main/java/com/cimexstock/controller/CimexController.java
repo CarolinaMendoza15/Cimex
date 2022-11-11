@@ -111,6 +111,11 @@ public class CimexController {
         UsuarioController usuarioServlet=new UsuarioController();
         LoguinController loguinController=new LoguinController();
         String numero="";
+
+        ProductoController controller= new ProductoController();
+        int cont =controller.listartarProductoAlertaStock().size();
+        if (cont >0)
+            System.out.println("!!!!!!!!!!!POSEE  " + cont + " PRODUCTOS BAJOS DE STOCK!!!!!!!!!!");
         boolean seguir=true;
         do {
             Scanner scan = new Scanner(System.in);
@@ -147,6 +152,7 @@ public class CimexController {
 
     private void printItem7() throws SQLException {
         ProductoController controller= new ProductoController();
+        System.out.println("ID | NOMBRE | CODIGO| PRECIO | STOCK | STOCK MINIMO | STOC RECOMENDADO |PROVEEDOR ");
         System.out.println(controller.listartarProductoAlertaStock());
     }
 
