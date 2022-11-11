@@ -97,12 +97,20 @@ public class CimexController {
         controller.modificarProducto(producto);
 
     }
-    public  void  printItem3() throws SQLException {
+    public  void  printItem3(Boolean editar) throws SQLException {
         ProductoController controller= new ProductoController();
         Scanner scan = new Scanner(System.in);
-        System.out.println("Seleccione Producto a eliminar:");
+        System.out.println("Seleccione Producto:");
         System.out.println(controller.listartarProducto());
         System.out.println("ID= ");
+        if (editar){
+            Integer numero = scan.nextInt();
+            Producto producto = controller.consultarProducto(numero);
+            printItem3Edi(producto);
+        }else{
+            Integer numero = scan.nextInt();
+            controller.eliminarProducto(numero);
+        }
         Integer numero = scan.nextInt();
         controller.eliminarProducto(numero);
 
@@ -207,9 +215,9 @@ public class CimexController {
                     break;
                 case "2": printItem2();
                     break;
-                case "3": printItem3();
+                case "3": printItem3(true);
                     break;
-                case "4": ;//printItem3Edi();
+                case "4": ;printItem3(false);
                     break;
                 case "5":printItem4();
                     break;
