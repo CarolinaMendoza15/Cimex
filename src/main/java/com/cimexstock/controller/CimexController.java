@@ -13,14 +13,15 @@ public class CimexController {
     public  void  printItem(){
         System.out.println("1_Consultar Productos Stock ");
         System.out.println("2_Agregar Producto");
-        System.out.println("3_Borrar Producto");
-        System.out.println("4_Agregar Usuario");
-        System.out.println("5_Editar Usuario");
-        System.out.println("6_Borrar Usuario");
-        System.out.println("7_Listar Usuario");
-        System.out.println("8_Consultar Productos con Alerta de Stock ");
-        System.out.println("9_Listar Proveedor");
-        System.out.println("10_SALIR");
+        System.out.println("3_Editar Producto");
+        System.out.println("4_Borrar Producto");
+        System.out.println("5_Agregar Usuario");
+        System.out.println("6_Editar Usuario");
+        System.out.println("7_Borrar Usuario");
+        System.out.println("8_Listar Usuario");
+        System.out.println("9_Consultar Productos con Alerta de Stock ");
+        System.out.println("10_Listar Proveedor");
+        System.out.println("11_SALIR");
     }
     public  void  printItem1() throws SQLException {
         ProductoController controller= new ProductoController();
@@ -169,19 +170,21 @@ public class CimexController {
                     break;
                 case "3": printItem3();
                     break;
-                case "4":printItem4();
+                case "4": ;//printItem3Edi();
                     break;
-                case "5":printItem5(true);
+                case "5":printItem4();
                     break;
-                case "6": printItem5(false);
+                case "6":printItem5(true);
                     break;
-                case "7": printItem7();
+                case "7": printItem5(false);
                     break;
-                case "8": printItem8();
+                case "8": printItem7();
                     break;
-                case "9": printItem9();
+                case "9": printItem8();
                     break;
-                case "10":
+                case "10": printItem9();
+                    break;
+                case "11":
                     seguir=false;
                     break;
                 default:System.out.println("ERROR! Seleccione un item");
