@@ -29,7 +29,7 @@ public class ProductoDb {
             String codigo = rs.getString("codigo");
             Integer proveedor_id = rs.getInt("proveedor_id");
             Proveedor proveedor1= ProveedorDb.getProveedor(proveedor_id);
-            Producto us =new Producto(id,nombre,valorunitario,stock,stockMinimo,stockrecomendado,proveedor1);
+            Producto us =new Producto(id,nombre,codigo,valorunitario,stock,stockMinimo,stockrecomendado,proveedor1);
             productos.add(us);
         }
         rs.close();
@@ -51,7 +51,7 @@ public class ProductoDb {
             String codigo = rs.getString("codigo");
             Integer proveedor_id = rs.getInt("proveedor_id");
             Proveedor proveedor1= ProveedorDb.getProveedor(proveedor_id);
-            Producto us =new Producto(id,nombre,valorunitario,stock,stockMinimo,stockrecomendado,proveedor1);
+            Producto us =new Producto(id,nombre,codigo,valorunitario,stock,stockMinimo,stockrecomendado,proveedor1);
             productos.add(us);
         }
         rs.close();
@@ -79,7 +79,7 @@ public class ProductoDb {
                 String codigo = rs.getString("codigo");
                 Integer proveedor_id = rs.getInt("proveedor_id");
                 Proveedor proveedor1 = ProveedorDb.getProveedor(proveedor_id);
-                return(new Producto(identitif,nombre,valorunitario,stock,stockMinimo,stockRecomendado,proveedor1));
+                return(new Producto(identitif,nombre,codigo,valorunitario,stock,stockMinimo,stockRecomendado,proveedor1));
 
             }
         }

@@ -19,10 +19,12 @@ public class CimexController {
         System.out.println("5_Borrar Usuario");
         System.out.println("6_Listar Usuario");
         System.out.println("7_Consultar Productos con Alerta de Stock ");
-        System.out.println("8_SALIR");
+        System.out.println("8_Listar Proveedor");
+        System.out.println("9_SALIR");
     }
     public  void  printItem1() throws SQLException {
         ProductoController controller= new ProductoController();
+        System.out.println("ID | NOMBRE | CODIGO| PRECIO | STOCK | STOCK MINIMO | STOC RECOMENDADO |PROVEEDOR ");
         System.out.println(controller.listartarProducto());
 
     }
@@ -132,7 +134,9 @@ public class CimexController {
                     break;
                 case "7": printItem7();
                     break;
-                case "8":
+                case "8": printItem8();
+                    break;
+                case "9":
                     seguir=false;
                     break;
                 default:System.out.println("ERROR! Seleccione un item");
@@ -144,5 +148,10 @@ public class CimexController {
     private void printItem7() throws SQLException {
         ProductoController controller= new ProductoController();
         System.out.println(controller.listartarProductoAlertaStock());
+    }
+
+    private void printItem8() throws SQLException {
+        ProveedorController controller= new ProveedorController();
+        System.out.println(controller.listartarProveedor());
     }
 }

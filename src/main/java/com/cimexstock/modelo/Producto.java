@@ -10,9 +10,10 @@ public class Producto {
     private  int StockRecomendado;
     private  Proveedor proveedor;
 
-    public Producto(int id, String nombre, double valorUnitario, int stock, int stockMinimo, int stockRecomendado, Proveedor proveedor) {
+    public Producto(int id, String nombre, String codigo, double valorUnitario, int stock, int stockMinimo, int stockRecomendado, Proveedor proveedor) {
         this.id = id;
         this.nombre = nombre;
+        this.codigo = codigo;
         this.valorUnitario = valorUnitario;
         Stock = stock;
         StockMinimo = stockMinimo;
@@ -25,14 +26,11 @@ public class Producto {
 
     @Override
     public String toString() {
-        return "\nProducto id=" + id +
-                ",\nnombre='" + nombre + '\'' +
-                ",\nvalorUnitario=" + valorUnitario +
-                ",\nStock=" + Stock +
-                ",\nStockMinimo=" + StockMinimo +
-                ",\nStockRecomendado=" + StockRecomendado +
-                ",\nproveedor=" + proveedor +"," +
-                " \n" + proveedor + " \n " ;
+        String sep=" | ";
+        return  id +sep+nombre+sep+codigo+sep+valorUnitario +
+                sep+ Stock +sep+ StockMinimo +
+                sep+ StockRecomendado +
+                sep+ proveedor.getNombre()+" \n " ;
     }
 
     public String getCodigo() {
