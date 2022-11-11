@@ -58,6 +58,45 @@ public class CimexController {
         controller.addProducto(producto);
 
     }
+    public  void  printItem3Edi(Producto producto) throws SQLException {
+        ProductoController controller= new ProductoController();
+        Scanner scan = new Scanner(System.in);
+        String edit;
+        Integer mod = null;
+        System.out.println("Editar Producto");
+        System.out.println("Editar Nombre" + producto.getNombre());
+        edit=scan.nextLine();
+        if (edit!="")
+            producto.setNombre(edit);
+        System.out.println("Editar Codigo" + producto.getCodigo());
+        edit=scan.nextLine();
+        if (edit!="")
+            producto.setCodigo(edit);
+        System.out.println("Editar Stock" + producto.getStock());
+        mod=scan.nextInt();
+        if (mod!=null)
+            producto.setStock(mod);
+        scan.nextLine();
+        System.out.println("Editar Stock Minimo" + producto.getStockMinimo());
+        mod=scan.nextInt();
+        if (mod!=null)
+            producto.setStockMinimo(mod);
+        scan.nextLine();
+        System.out.println("Editar Stock Recomendado" + producto.getStockRecomendado());
+        mod=scan.nextInt();
+        if (mod!=null)
+            producto.setStockRecomendado(mod);
+        scan.nextLine();
+        System.out.println("Editar $ Precio"+ producto.getValorUnitario());
+        Double modD=scan.nextDouble();
+        if (mod!=null)
+            producto.setValorUnitario(mod);
+        scan.nextLine();
+        //pendiente agregar Proveedor controller
+        producto.setProveedor(ProveedorDb.getProveedor(1));
+        controller.modificarProducto(producto);
+
+    }
     public  void  printItem3() throws SQLException {
         ProductoController controller= new ProductoController();
         Scanner scan = new Scanner(System.in);
