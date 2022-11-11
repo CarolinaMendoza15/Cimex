@@ -63,31 +63,31 @@ public class CimexController {
         Scanner scan = new Scanner(System.in);
         String edit;
         Integer mod = null;
-        System.out.println("Editar Producto");
-        System.out.println("Editar Nombre" + producto.getNombre());
+        System.out.println("Editar Producto ");
+        System.out.println("Editar Nombre " + producto.getNombre());
         edit=scan.nextLine();
         if (edit!="")
             producto.setNombre(edit);
-        System.out.println("Editar Codigo" + producto.getCodigo());
+        System.out.println("Editar Codigo " + producto.getCodigo());
         edit=scan.nextLine();
         if (edit!="")
             producto.setCodigo(edit);
-        System.out.println("Editar Stock" + producto.getStock());
+        System.out.println("Editar Stock " + producto.getStock());
         mod=scan.nextInt();
         if (mod!=null)
             producto.setStock(mod);
         scan.nextLine();
-        System.out.println("Editar Stock Minimo" + producto.getStockMinimo());
+        System.out.println( "Editar Stock Minimo " + producto.getStockMinimo());
         mod=scan.nextInt();
         if (mod!=null)
             producto.setStockMinimo(mod);
         scan.nextLine();
-        System.out.println("Editar Stock Recomendado" + producto.getStockRecomendado());
+        System.out.println("Editar Stock Recomendado " + producto.getStockRecomendado());
         mod=scan.nextInt();
         if (mod!=null)
             producto.setStockRecomendado(mod);
         scan.nextLine();
-        System.out.println("Editar $ Precio"+ producto.getValorUnitario());
+        System.out.println("Editar $ Precio "+ producto.getValorUnitario());
         Double modD=scan.nextDouble();
         if (mod!=null)
             producto.setValorUnitario(mod);
