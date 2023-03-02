@@ -1,0 +1,30 @@
+src/
+└── main/
+    ├── java/
+    │   ├── app/
+    │   │   ├── Main.java
+    │   │   ├── AppController.java
+    │   │   └── App.fxml
+    │   ├── view/
+    │   │   ├── View1Controller.java
+    │   │   ├── View1.fxml
+    │   │   ├── View2Controller.java
+    │   │   ├── View2.fxml
+    │   │   └── ...
+    │   ├── model/
+    │   │   ├── Model1.java
+    │   │   ├── Model2.java
+    │   │   └── ...
+    │   └── util/
+    │       ├── Util1.java
+    │       ├── Util2.java
+    │       └── ...
+    └── resources/
+        ├── styles/
+        │   └── App.css
+        ├── images/
+        │   ├── icon.png
+        │   └── ...
+        └── ...
+
+

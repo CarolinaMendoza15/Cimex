@@ -1,7 +1,6 @@
-package com.cimexstock.db;
+package com.cimexstock.modelo.src.main.java.com.cimexstock.db;
 
-import com.cimexstock.modelo.Producto;
-import com.cimexstock.modelo.Proveedor;
+import com.cimexstock.modelo.src.main.java.com.cimexstock.modelo.Proveedor;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

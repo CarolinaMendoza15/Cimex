@@ -1,10 +1,9 @@
-package com.cimexstock.db;
+package com.cimexstock.modelo.src.main.java.com.cimexstock.db;
 
 
-import com.cimexstock.modelo.Producto;
-import com.cimexstock.modelo.Proveedor;
+import com.cimexstock.modelo.src.main.java.com.cimexstock.modelo.Producto;
+import com.cimexstock.modelo.src.main.java.com.cimexstock.modelo.Proveedor;
 
-import javax.swing.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

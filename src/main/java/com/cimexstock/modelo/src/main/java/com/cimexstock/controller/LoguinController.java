@@ -1,4 +1,4 @@
-package com.cimexstock.controller;
+package com.cimexstock.modelo.src.main.java.com.cimexstock.controller;
 
 import java.sql.SQLException;
 import java.util.Scanner;

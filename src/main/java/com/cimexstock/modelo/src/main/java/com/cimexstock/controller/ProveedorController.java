@@ -1,8 +1,8 @@
-package com.cimexstock.controller;
+package com.cimexstock.modelo.src.main.java.com.cimexstock.controller;
 
 
-import com.cimexstock.db.ProveedorDb;
-import com.cimexstock.modelo.Proveedor;
+import com.cimexstock.modelo.src.main.java.com.cimexstock.db.ProveedorDb;
+import com.cimexstock.modelo.src.main.java.com.cimexstock.modelo.Proveedor;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

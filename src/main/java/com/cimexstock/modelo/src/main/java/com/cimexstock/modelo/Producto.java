@@ -1,4 +1,4 @@
-package com.cimexstock.modelo;
+package com.cimexstock.modelo.src.main.java.com.cimexstock.modelo;
 
 public class Producto {
     private int id;

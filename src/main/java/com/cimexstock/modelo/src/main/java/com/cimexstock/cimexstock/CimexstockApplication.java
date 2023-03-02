@@ -1,7 +1,7 @@
-package com.cimexstock.cimexstock;
+package com.cimexstock.modelo.src.main.java.com.cimexstock.cimexstock;
 
 
-import com.cimexstock.controller.LoguinController;
+import com.cimexstock.modelo.src.main.java.com.cimexstock.controller.LoguinController;
 
 import java.sql.SQLException;
 

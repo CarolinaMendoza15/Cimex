@@ -1,10 +1,6 @@
-package com.cimexstock.db;
+package com.cimexstock.modelo.src.main.java.com.cimexstock.db;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class ConectDb {
     private Connection c = null; // Objeto de tipo coneccion donde se guardaran los datos de coneccion
